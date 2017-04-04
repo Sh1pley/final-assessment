@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root to: "links#index"
   
-  resources :links, only: [:index, :create, :edit]
+  resources :links, only: [:index, :create, :edit, :update]
   resources :users
 
   namespace :api do
