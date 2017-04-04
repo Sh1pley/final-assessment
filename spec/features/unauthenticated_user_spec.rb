@@ -13,8 +13,8 @@ describe "Unauthenticated User" do
     click_on "Sign Up"
 
     expect(current_path).to eq(new_user_path)
-    expect(page).to have_form("Email Address")
-    expect(page).to have_form("Password")
-    expect(page).to have_form("Password Confirmation")
+    expect(page).to have_field("Email")
+    expect(page).to have_field("Password")
+    expect(page).to have_field("Password confirmation")
   end
 end
