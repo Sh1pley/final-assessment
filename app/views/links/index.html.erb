@@ -1,13 +1,21 @@
 <h2>Hi <%= @current_user.email %>! </h2>
 <div class='links-header'>
-  <h2>Links!</h2>
 </div>
 <% if current_user %>
   <%= render partial: 'layouts/link_form' %>
 <% end %>
 
-<div class='links-list'>
-  
-</div>
+<% if @links.count >= 1 %>
+  <h2>Links!</h2>
+  <div class='links-list'>
+    <% @links.each do |link| %>
+      <div class='link'>
+        <%= link.title %>
+        <%= link_to link.url, link.url %>
+        Read: <%= link.read %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 <br>
 <%= render partial: 'layouts/logout' %>
