@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 describe "Unauthenticated User" do
+  before :each do
+    User.delete_all
+  end
   scenario "visits '/' path should be redirected" do
     visit '/'
 
@@ -19,8 +22,7 @@ describe "Unauthenticated User" do
   end
 
   scenario "should not be able to sign up with just an email" do
-    visit '/'
-    click_on "Sign Up"
+    visit '/users/new'
     fill_in :user_email, with: "j@j.com"
     click_on "Sign Up"
 
@@ -28,8 +30,7 @@ describe "Unauthenticated User" do
   end
 
    scenario "should not be able to sign up without confirming password" do
-    visit '/'
-    click_on "Sign Up"
+    visit '/users/new'
     fill_in :user_email, with: "j@j.com"
     fill_in :user_password, with: '1234'
     click_on "Sign Up"
