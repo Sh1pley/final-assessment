@@ -24,7 +24,7 @@ describe "Unauthenticated User" do
     fill_in :user_email, with: "j@j.com"
     click_on "Sign Up"
 
-    expect(page).to have_content("Password can't be blank,")
+    expect(page).to have_content("Password can't be blank")
   end
 
    scenario "should not be able to sign up without confirming password" do
