@@ -1,7 +1,32 @@
 <div class="login-container"> 
-  <div class='login-header'>
-    <h2>Please Log in</h2>
+    <div class='login-header'>
+      <h2>Please Log in</h2>
+      <div class='user-form'>
+      <%= form_for :session, :url => '/login' do |f| %>
+        <div class='form-group'>
+          <%= label_tag :email %>
+          <br>
+          <%= f.email_field :email, class: "form-control" %>
+        </div>
+        <div class='form-group'>
+          <%= label_tag :password %>
+          <br>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+        <div class='form-group'>
+          <%= label_tag :password_confirmation %>
+          <br>
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+        <div class='form-group'>
+          <%= f.submit "Log in", class: "form-control btn btn-default btn-success" %>
+        </div>
+      <% end %>
+    </div>
   </div>
+  <div>
+  </div>
+  <br>
   <div class='sign-up'>
     <%= link_to 'Sign Up', new_user_path %>
   </div>
