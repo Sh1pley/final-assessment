@@ -27,6 +27,8 @@ rspec
   * will probably break this form into a partial to better serve across multi views
 * Hook the create user form to the database, allows for creation of Users
   * broke error messages and flashs to a partial to parse
+* scope base permissions to current_user, simple as not showing the main index if not logged in.
+
 
 
 #### Extras
