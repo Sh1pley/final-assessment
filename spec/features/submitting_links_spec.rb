@@ -22,7 +22,6 @@ describe "as a User, when logged in" do
     fill_in :session_password, with: @user.password
     fill_in :session_password_confirmation, with: @user.password
     click_on "Log in"
-    save_and_open_page
     fill_in :title, with: "Super Nice Link"
     fill_in :url, with: "https://turing.io"
     click_on "Add Link"
