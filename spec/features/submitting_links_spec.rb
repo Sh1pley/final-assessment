@@ -15,4 +15,22 @@ describe "as a User, when logged in" do
     expect(page).to have_field(:link_title)
     expect(page).to have_field(:link_url)
   end
+
+  scenario "should be able to submit new links and see them" do
+    visit root_path
+    fill_in :session_email, with: @user.email
+    fill_in :session_password, with: @user.password
+    fill_in :session_password_confirmation, with: @user.password
+    click_on "Log in"
+    
+    fill_in :link_title, with: "Super Nice Link"
+    fill_in :link_url, with: "https://turing.io"
+
+    link = Link.first
+
+    expect(link.title).to eq("Super Nice Link")
+    expect(link.url).to eq("https://turing.io")
+    expect(page).to have_content("Super Nice Link")
+    expect(page).to have_css("a", text: "https://turing.io")
+  end
 end
