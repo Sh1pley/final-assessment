@@ -2,9 +2,7 @@
 
 ## MidModule Assessment
 
-The URLockbox is a starter app for the mid-module assessment for backend engineering module4 at TuringSchool of Software and Design.
-
-Be sure to get familiar with what is already done, and what is not. No features are complete, but there is some set up done for several features. Use commit history if that helps.
+The URLockbox is the final project at the Turing School of Software & Design. 
 
 ### Testing your JS with Selenium
 
@@ -12,7 +10,11 @@ The app has the `selenium-webdriver` gem listed in the `Gemfile` and setup in th
 
 #### Setup
 
-Everything will be installed with Bundle.
+```
+bundle
+rake db:setup
+rspec
+```
 
 You will need to download version 46 of Firefox [here](https://www.softexia.com/windows/web-browsers/firefox-46). If you do have it, make sure it is on version 46. Selenium does not work with all versions of Firefox, so make sure that you are using Firefox 46 or else it will potentially cause you problems. 
 
