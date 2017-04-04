@@ -45,6 +45,7 @@ describe "Unauthenticated User" do
     fill_in :user_password_confirmation, with: '1234'
     click_on "Sign Up"
 
-    expect(page).to have_content("1234")
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("Welcome")
   end
 end
