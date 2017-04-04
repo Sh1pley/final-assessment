@@ -1,0 +1,11 @@
+.link-list {
+  display: inline-flex;
+  align-items: flex-end;
+}
+.link {
+  border: .1em solid grey;
+  padding: .3em;
+  width: 8em;
+  border-radius: 15px;
+  text-align: center;
+}

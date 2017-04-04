@@ -11,8 +11,12 @@
     <% @links.each do |link| %>
       <div class='link'>
         <%= link.title %>
+        <br>
         <%= link_to link.url, link.url %>
+        <br>
         Read: <%= link.read %>
+        <br>
+        <%= link_to 'Edit', edit_link_path(link) %>
       </div>
     <% end %>
   </div>
