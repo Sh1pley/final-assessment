@@ -25,6 +25,8 @@ rspec
 * Add redirect inside application controller with an authorize! method
 * Add Create User form and Password confirmation.
   * will probably break this form into a partial to better serve across multi views
+* Hook the create user form to the database, allows for creation of Users
+  * broke error messages and flashs to a partial to parse
 
 
 #### Extras
