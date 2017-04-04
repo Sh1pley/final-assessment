@@ -22,13 +22,15 @@ rake db:setup
 rspec
 ```
 #### Progress Notes
+##### Realizing doing so much JavaScript has stolen some Ruby magic from me
 * Add redirect inside application controller with an authorize! method
 * Add Create User form and Password confirmation.
   * will probably break this form into a partial to better serve across multi views
 * Hook the create user form to the database, allows for creation of Users
   * broke error messages and flashs to a partial to parse
 * scope base permissions to current_user, simple as not showing the main index if not logged in.
-
+* following the spec, I added link creation as direct database calls and a page refresh - this will be changed soon
+* scoped the delegation of who owns a link on creation to allow the current user to own it on create
 
 
 #### Extras
