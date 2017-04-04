@@ -23,6 +23,8 @@ rspec
 ```
 #### Progress Notes
 * Add redirect inside application controller with an authorize! method
+* Add Create User form and Password confirmation.
+  * will probably break this form into a partial to better serve across multi views
 
 
 #### Extras
