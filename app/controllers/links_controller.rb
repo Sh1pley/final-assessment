@@ -1,11 +1,12 @@
 class LinksController < ApplicationController
   before_action :authorize!
   def index
-    @links = Link.all
+    @links = current_user.links
   end
 
   def create
     link = Link.create(link_params)
+    current_user.links << link
     redirect_to root_path
   end
 
