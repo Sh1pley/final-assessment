@@ -26,4 +26,25 @@ describe "Unauthenticated User" do
 
     expect(page).to have_content("Password can't be blank,")
   end
+
+   scenario "should not be able to sign up without confirming password" do
+    visit '/'
+    click_on "Sign Up"
+    fill_in :user_email, with: "j@j.com"
+    fill_in :user_password, with: '1234'
+    click_on "Sign Up"
+
+    expect(page).to have_content("Password confirmation doesn't match Password")
+  end
+
+  scenario "should be able to sign up with email and confirmed password" do
+    visit '/'
+    click_on "Sign Up"
+    fill_in :user_email, with: "j@j.com"
+    fill_in :user_password, with: '1234'
+    fill_in :user_password_confirmation, with: '1234'
+    click_on "Sign Up"
+
+    expect(page).to have_content("1234")
+  end
 end
