@@ -1,0 +1,13 @@
+<div class="link-form">
+  <em>Add a Link...</em>
+  <%= form_tag("/api/v1/links", method: :post) do %>
+    <br>
+    <%= label_tag :link_url %>
+    <%= text_field_tag :link_url %>
+    <br>
+    <%= label_tag :link_title %>
+    <%= text_field_tag :link_title %>
+    <br>
+    <%= submit_tag "Add Link" %>
+  <% end %>
+</div>
