@@ -7,6 +7,9 @@
 
 <% if @links.count >= 1 %>
   <h2>Links!</h2>
+  <div class='search-box'>
+    <input type="text" name="search" placeholder="Search..">
+  </div>
   <div class='link-container'>
     <% @links.each do |link| %>
       <%= render partial: "layouts/link", locals: {link: link} %>
