@@ -8,7 +8,11 @@
       Read: <%= link.read %>
     </p>
     <br>
-    <button class='mark-as-read'>Mark as Read</button>
+    <% if link.read == false %>
+      <button class='mark-as-read'>Mark as Read</button>
+    <% else %>
+      <button class='mark-as-unread'>Mark as Unread</button>
+    <% end %>      
     <%= button_to 'Edit', edit_link_path(link), method: :get %>
   </div>
 </div>

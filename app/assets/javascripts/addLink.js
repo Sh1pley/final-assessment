@@ -3,7 +3,7 @@ $(document).ready( () =>{
 })
 
 handleSubmit = () => {
-  $('.submit-link').submit( (event) => {
+  $('.submit-link').click( (event) => {
     event.preventDefault();
     addLink();
   })
@@ -22,7 +22,8 @@ addLink = () => {
     method: 'POST',
     data: linkData
   }).done( (res) => {
-    $('.link-container').append(res);
+    $('.alert').remove();
+    $('.link-container').prepend(res);
     $('#title').val('');
     $('#url').val('');
   })
