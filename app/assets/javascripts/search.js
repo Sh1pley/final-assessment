@@ -13,11 +13,11 @@ filterLinks = () => {
 
 showRows = ($search, $rows) => {
   for (var i = 0; i < $rows.length; i++) {
-    let title = $($rows[i]).children()
-    console.log(title)
-    // if (title.indexOf($search) >= 0) {
-    //   $rows[i].show();
-    // }
+    let title = $($rows[i]).children().children('p.link-title').text().toLowerCase();
+    let url = $($rows[i]).children().children('p.link-url').text().toLowerCase();
+    if ((title.indexOf($search) >= 0) || (url.indexOf($search) >= 0)) {
+      $($rows[i]).show();
+    }
     
   }
 }
