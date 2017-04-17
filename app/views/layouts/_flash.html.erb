@@ -1,4 +1,7 @@
-<% flash.each do |name, msg| %>
-  <div class="alert alert-<%= name %>"></div>
-  <%= sanitize(msg, tags: %w(a), attributes: %w(href rel data-method)) %>
-<% end%>
+<div class='container'>
+  <% flash.each do |name, msg| %>
+    <div class="alert alert-<%= name %>">
+      <%= sanitize(msg, tags: %w(a), attributes: %w(href rel data-method)) %>
+    </div>
+  <% end%>
+</div>
