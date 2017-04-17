@@ -4,7 +4,10 @@
 
 The URLockbox is the final project at the Turing School of Software & Design.
 
-Production for the project lives here [Hotness](https://hotness.herokuapp.com/) 
+Production for the project lives here [Hotness](https://hotness.herokuapp.com/)
+* To check it all out: 
+  - user_name: t@t.com
+  - password: 1234
 
 ### Testing your JS with Selenium
 
@@ -20,7 +23,9 @@ The app has the `selenium-webdriver` gem listed in the `Gemfile` and setup in th
 bundle
 rake db:setup
 rspec
+
 ```
+
 #### Progress Notes
 ##### Realizing doing so much JavaScript has stolen some Ruby magic from me
 * Add redirect inside application controller with an authorize! method
@@ -31,6 +36,8 @@ rspec
 * scope base permissions to current_user, simple as not showing the main index if not logged in.
 * following the spec, I added link creation as direct database calls and a page refresh - this will be changed soon
 * scoped the delegation of who owns a link on creation to allow the current user to own it on create
+* can now mark as read! Woo
+
 
 
 #### Extras
