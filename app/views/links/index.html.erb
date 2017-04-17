@@ -7,16 +7,19 @@
 
 <% if @links.count >= 1 %>
   <h2>Links!</h2>
-  <div class='links-list'>
+  <div class='link-container'>
     <% @links.each do |link| %>
-      <div class='link'>
+      <div class='col link'>
         <%= link.title %>
         <br>
-        <%= link_to link.url, link.url %>
+        <%= link_to "#{link.url[8..28]}..", link.url %>
         <br>
-        Read: <%= link.read %>
+        <p class="read-status"> 
+          Read: <%= link.read %>
+        </p>
         <br>
-        <%= link_to 'Edit', edit_link_path(link) %>
+        <%= button_to 'Mark as Read', update_status_path(link) %>
+        <%= button_to 'Edit', edit_link_path(link), method: :get %>
       </div>
     <% end %>
   </div>

@@ -25,10 +25,10 @@ describe "as a User, when logged in" do
     click_on "Add Link"
 
     link = Link.first
-
+    
     expect(link.title).to eq("Super Nice Link")
     expect(link.url).to eq("https://turing.io")
     expect(page).to have_content("Super Nice Link")
-    expect(page).to have_css("a", text: "https://turing.io")
+    expect(page).to have_css("a", text: "turing.io..")
   end
 end

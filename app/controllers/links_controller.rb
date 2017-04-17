@@ -15,8 +15,15 @@ class LinksController < ApplicationController
     redirect_to root_path
   end
 
-  def update
-    byebug
+  def update_status
+    link = Link.find(params[:id])
+    if link.read == true
+      link.read = false
+    else
+      link.read = true
+    end
+    link.save
+    redirect_to root_path
   end
 
   private
