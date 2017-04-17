@@ -9,10 +9,11 @@ class LinksController < ApplicationController
     if link.save
       flash[:success] = "#{link.title} added."
       current_user.links << link
+      render partial: 'layouts/form', locals: {link: link}, layout: false
     else
       flash[:danger] = link.errors.full_messages.join(", ")
     end
-    redirect_to root_path
+    # redirect_to root_path
   end
 
   def edit
