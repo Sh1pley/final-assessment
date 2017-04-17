@@ -1,12 +1,14 @@
-<div class='col link'>
-  <%= link.title %>
-  <br>
-  <%= link_to "#{link.url[8..28]}..", link.url %>
-  <br>
-  <p class="read-status"> 
-    Read: <%= link.read %>
-  </p>
-  <br>
-  <%= button_to 'Mark as Read', update_status_path(link) %>
-  <%= button_to 'Edit', edit_link_path(link), method: :get %>
+<div class="col link <%=link.read%>" data-link-id=<%=link.id%> >
+  <div >
+    <%= link.title %>
+    <br>
+    <%= link_to "#{link.url[8..28]}..", link.url %>
+    <br>
+    <p class="read-status"> 
+      Read: <%= link.read %>
+    </p>
+    <br>
+    <button class='mark-as-read'>Mark as Read</button>
+    <%= button_to 'Edit', edit_link_path(link), method: :get %>
+  </div>
 </div>
