@@ -1,7 +1,11 @@
-.link-list {
-  display: inline-flex;
-  align-items: flex-end;
+.link-container {
+  display: flex;
+  
 }
+.col {
+  flex: 1;
+}
+
 .link {
   border: .1em solid grey;
   padding: .3em;
