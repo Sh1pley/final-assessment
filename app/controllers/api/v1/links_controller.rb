@@ -1,7 +1,7 @@
 class Api::V1::LinksController < ApplicationController
 
   def index
-    @links = []
+    @links = Link.hotreads
     render json: @links
   end
 
