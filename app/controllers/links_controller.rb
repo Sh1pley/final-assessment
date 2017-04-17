@@ -31,17 +31,6 @@ class LinksController < ApplicationController
     redirect_to root_path
   end
 
-  # def update_status
-  #   link = current_user.links.find(params[:id])
-  #   if link.read == true
-  #     link.read = false
-  #   else
-  #     link.read = true
-  #   end
-  #   link.save
-  #   redirect_to root_path
-  # end
-
   private
     def link_params
       params.permit(:title, :url)

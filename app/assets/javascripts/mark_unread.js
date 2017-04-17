@@ -1,8 +1,8 @@
 $( document ).ready(function(){
-  $("body").on("click", ".mark-as-read", markAsRead)
+  $("body").on("click", ".mark-as-unread", markAsUnread)
 })
 
-function markAsRead(e) {
+function markAsUnread(e) {
   e.preventDefault();
 
   var $link = $(this).parents('.link');
@@ -11,7 +11,7 @@ function markAsRead(e) {
   $.ajax({
     type: "PATCH",
     url: "/api/v1/links/" + linkId,
-    data: { read: true },
+    data: { read: false },
   }).then(updateLinkStatus)
     .fail(displayFailure);
 }
@@ -19,7 +19,6 @@ function markAsRead(e) {
 function updateLinkStatus(link) {
   $(`.link[data-link-id=${link.id}]`).find(".read-status").text('Read: ' + link.read);
   $(`.link[data-link-id=${link.id}]`).toggleClass('false true');
-  $(`.link[data-link-id=${link.id}]`).toggleClass('mark-as-read mark-as-unread');
 }
 
 function displayFailure(failureData){
