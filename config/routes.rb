@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   get    '/login',  to: 'sessions#new'
   post   '/login',  to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-
   root to: "links#index"
   
   resources :links, only: [:index, :create, :edit, :update]
@@ -10,6 +9,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      get '/hotreads', to: 'links#index'
       resources :links, only: [:create, :update]
     end
   end
