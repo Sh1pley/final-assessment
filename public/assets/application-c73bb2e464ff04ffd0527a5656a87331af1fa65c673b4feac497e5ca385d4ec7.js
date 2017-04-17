@@ -11649,6 +11649,8 @@ function displayFailure(failureData){
 ;
 $(document).ready( () => {
   filterLinks();
+  unreadFilter();
+  readFilter();
 })
 
 filterLinks = () => {
@@ -11667,8 +11669,21 @@ showRows = ($search, $rows) => {
     if ((title.indexOf($search) >= 0) || (url.indexOf($search) >= 0)) {
       $($rows[i]).show();
     }
-    
   }
+}
+
+unreadFilter = () => {
+  $('.unread-filter').click( () => {
+    let $read = $('.true')
+    $read.toggle() // could use .hide() for one way hiding
+  })
+}
+
+readFilter = () => {
+  $('.read-filter').click( () => {
+    let $unread = $('.false')
+    $unread.toggle() // same as above
+  })
 }
 ;
 // This is a manifest file that'll be compiled into application.js, which will include all the files
