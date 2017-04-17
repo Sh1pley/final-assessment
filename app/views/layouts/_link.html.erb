@@ -1,13 +1,14 @@
 <div class="col link <%=link.read%>" data-link-id=<%=link.id%> >
-  <div >
-    <%= link.title %>
-    <br>
-    <%= link_to "#{link.url[8..28]}..", link.url %>
-    <br>
+  <div>
+    <p class='link-title'>
+      <%= link.title %>
+    </p>
+    <p class='link-url'>
+      <%= link_to "#{link.url[8..28]}..", link.url %>
+    </p>
     <p class="read-status"> 
       Read: <%= link.read %>
     </p>
-    <br>
     <% if link.read == false %>
       <button class='mark-as-read'>Mark as Read</button>
     <% else %>

@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   get    '/login',  to: 'sessions#new'
   post   '/login',  to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  post   '/links/:id/status', to: 'links#update_status', as: :update_status
 
   root to: "links#index"
   
