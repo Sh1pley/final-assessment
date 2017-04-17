@@ -12,6 +12,7 @@ class Api::V1::LinksController < ApplicationController
     else
       render json: @link.errors.full_messages, status: 500
     end
+    Link.add_count(@link)
   end
 
   private
