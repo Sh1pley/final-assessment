@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe 'Editing Links' do
-  before do
-    @user = User.create(email: "test", password: "1111")
+describe 'Editing Links', :js => :true do
+  before :each do
+    @user = User.create(email: "test@test.com", password: "1111")
     @user.links << Link.create(title: "test link", url: "https://testlink.com")
     visit root_path
     fill_in :session_email, with: @user.email
@@ -22,17 +22,15 @@ describe 'Editing Links' do
     click_on "Update Link"
     link = Link.first
 
-    expect(current_path).to eq(root_path)
-    expect(link.title).to eq("not a test link")
+    expect(page).to have_content("not a test link")
   end
 
-  scenario 'changint the url of the link, updates the url' do
+  scenario 'changing the url of the link, updates the url' do
     click_on "Edit"
     fill_in :url, with: "https://not.test.com"
     click_on "Update Link"
     link = Link.first
 
-    expect(current_path).to eq(root_path)
-    expect(link.url).to eq("https://not.test.com")
+    expect(page).to have_content("https://not.test.com")
   end
 end
