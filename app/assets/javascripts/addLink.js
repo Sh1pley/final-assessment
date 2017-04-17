@@ -19,8 +19,8 @@ addLink = () => {
     method: 'POST',
     data: link
   }).done( (res) => {
-    console.log(res)
-    // $('.link-container').append(res);
-    // $('')
+    $('.link-container').append(res);
+    $('#title').val('');
+    $('#url').val('');
   })
 }

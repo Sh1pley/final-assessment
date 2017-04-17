@@ -5,15 +5,14 @@ class LinksController < ApplicationController
   end
 
   def create
-    link = Link.create(link_params)
+    link = current_user.links.new(link_params)
     if link.save
       flash[:success] = "#{link.title} added."
-      current_user.links << link
-      render partial: 'layouts/form', locals: {link: link}, layout: false
+      render partial: 'layouts/link', locals: {link: link}, layout: false
     else
       flash[:danger] = link.errors.full_messages.join(", ")
+      render partial: 'layouts/flash'
     end
-    # redirect_to root_path
   end
 
   def edit
