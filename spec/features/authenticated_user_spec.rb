@@ -8,7 +8,6 @@ describe "Authenticated User" do
     visit login_path
     fill_in :session_email, with: @user.email
     fill_in :session_password, with: @user.password
-    fill_in :session_password_confirmation, with: @user.password
     click_on "Log in"
 
     expect(current_path).to eq(root_path)
@@ -19,7 +18,6 @@ describe "Authenticated User" do
     visit login_path
     fill_in :session_email, with: @user.email
     fill_in :session_password, with: @user.password
-    fill_in :session_password_confirmation, with: @user.password
     click_on "Log in"
 
     expect(current_path).to eq(root_path)
@@ -32,7 +30,6 @@ describe "Authenticated User" do
     visit login_path
     fill_in :session_email, with: @user.email
     fill_in :session_password, with: @user.password
-    fill_in :session_password_confirmation, with: @user.password
     click_on "Log in"
 
     expect(current_path).to eq(root_path)

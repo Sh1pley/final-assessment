@@ -8,7 +8,6 @@ describe "as a User, when logged in" do
     visit root_path
     fill_in :session_email, with: @user.email
     fill_in :session_password, with: @user.password
-    fill_in :session_password_confirmation, with: @user.password
     click_on "Log in"
 
     expect(current_path).to eq('/')
@@ -20,7 +19,6 @@ describe "as a User, when logged in" do
     visit root_path
     fill_in :session_email, with: @user.email
     fill_in :session_password, with: @user.password
-    fill_in :session_password_confirmation, with: @user.password
     click_on "Log in"
     fill_in :title, with: "Super Nice Link"
     fill_in :url, with: "https://turing.io"
