@@ -16,11 +16,11 @@ class LinksController < ApplicationController
   end
 
   def edit
-    @link = Link.find(params[:id])
+    @link = current_user.links.find(params[:id])
   end
 
   def update
-    link = Link.find(params[:id])
+    link = current_user.links.find(params[:id])
     if link_params[:title].empty?
       link.update(title: link.title, url: link_params[:url])
     elsif link_params[:url].empty?  
@@ -32,7 +32,7 @@ class LinksController < ApplicationController
   end
 
   def update_status
-    link = Link.find(params[:id])
+    link = current_user.links.find(params[:id])
     if link.read == true
       link.read = false
     else
