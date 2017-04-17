@@ -25,7 +25,8 @@ describe 'Filtering links', :js => :true do
       expect(page).to have_selector('.link', count: 1)
       expect(page).to have_content('test2')
     end
-
+    
+    click_link_or_button "Unread links"
     click_link_or_button "Read links"
     within('.link-container') do
       expect(page).to have_selector('.link', count: 1)
