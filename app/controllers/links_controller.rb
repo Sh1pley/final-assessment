@@ -8,7 +8,7 @@ class LinksController < ApplicationController
     link = current_user.links.new(link_params)
     if link.save
       flash[:success] = "#{link.title} added."
-      render partial: 'layouts/link', locals: {link: link}, layout: false
+      render partial: 'layouts/new_link', locals: {link: link}, layout: false
     else
       flash[:danger] = link.errors.full_messages.join(", ")
       render partial: 'layouts/flash'
