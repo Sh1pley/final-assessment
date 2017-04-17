@@ -1,0 +1,12 @@
+<div class='col link'>
+  <%= link.title %>
+  <br>
+  <%= link_to "#{link.url[8..28]}..", link.url %>
+  <br>
+  <p class="read-status"> 
+    Read: <%= link.read %>
+  </p>
+  <br>
+  <%= button_to 'Mark as Read', update_status_path(link) %>
+  <%= button_to 'Edit', edit_link_path(link), method: :get %>
+</div>
