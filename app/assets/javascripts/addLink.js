@@ -10,14 +10,17 @@ handleSubmit = () => {
 }
 
 addLink = () => {
-  let link = {
-    url: $('#url').val(),
-    title: $('#title').val()
+  let linkData = {
+    link: {
+      url: $('#url').val(),
+      title: $('#title').val()
+    }
   }
+
   $.ajax({
     url: '/links',
     method: 'POST',
-    data: link
+    data: linkData
   }).done( (res) => {
     $('.link-container').append(res);
     $('#title').val('');
