@@ -13,6 +13,8 @@ describe 'Editing Links' do
     click_on "Log in"
 
     click_on "Edit"
+
+    expect(current_path).to eq('/links/1/edit')
     
   end
 end

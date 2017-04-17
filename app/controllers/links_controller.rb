@@ -15,6 +15,22 @@ class LinksController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @link = Link.find(params[:id])
+  end
+
+  def update
+    link = Link.find(params[:id])
+    if link_params[:title].empty?
+      link.update(title: link.title, url: link_params[:url])
+    elsif link_params[:url].empty?  
+      link.update(title: link_params[:title], url: link.url)
+    else
+      link.update(link_params)
+    end
+    redirect_to root_path
+  end
+
   def update_status
     link = Link.find(params[:id])
     if link.read == true
