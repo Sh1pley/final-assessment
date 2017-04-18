@@ -10,13 +10,13 @@ class Link < ActiveRecord::Base
     else
       link.count = 1
     end  
-    # link.save
   end
 
-  def self.user_hotreads(id)
+  def self.user_hotlinks(id)
     where({counted: true, user_id: id})
     .order('count DESC')
     .take(10)
+
   end
 
   def self.hotreads
