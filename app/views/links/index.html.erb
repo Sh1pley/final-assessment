@@ -18,7 +18,7 @@
       <% @hotreads.each do |link| %>
         <%= render partial: "layouts/hotlink", locals: {link: link, hot: "hot"} %>
       <% end %>
-    <% end %>  
+    <% end %>
     <% @links.each do |link| %>
       <%= render partial: "layouts/link", locals: {link: link} %>
     <% end %>
