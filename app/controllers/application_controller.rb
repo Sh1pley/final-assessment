@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
 
   def authorize!
     unless current_user
-      redirect_to login_path, danger: "You can't be here! Please Log in or Register."
+      flash.now[:danger] = "Please Log in or Register."
+      redirect_to login_path
     end
   end
 
