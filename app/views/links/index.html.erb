@@ -14,7 +14,7 @@
   </div>
   <div class='link-container'>
     <% if @hotreads.length > 0 %>
-      <%= render partial: "layouts/hotlink", locals: {link: @hotreads.shift, hot: "top"} %>
+      <%= render partial: "layouts/hotlink", locals: {link: @hotreads[0], hot: "top"} %>
       <% @hotreads.each do |link| %>
         <%= render partial: "layouts/hotlink", locals: {link: link, hot: "hot"} %>
       <% end %>
