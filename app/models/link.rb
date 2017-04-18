@@ -5,7 +5,7 @@ class Link < ActiveRecord::Base
 
   def self.add_count(link)
       link.counted = true
-      link.count = +1
+      link.count += 1
   end
 
   def self.hotreads
