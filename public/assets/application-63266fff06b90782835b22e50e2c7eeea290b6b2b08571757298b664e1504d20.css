@@ -8828,6 +8828,14 @@ button.close {
   border: .2em solid grey;
 }
 
+/* line 35, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
+.alert {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  margin: 10px 0 0 10px;
+}
+
 /* line 1, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/search.scss */
 .input[type=text] {
   width: 130px;
