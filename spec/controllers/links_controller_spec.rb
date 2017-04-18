@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Api::V1::LinksController do
   before :all do
     5.times do
-      Link.create(title: Faker::Company.bs, url: Faker::Internet.url, read: true)
+      Link.create(title: Faker::Company.bs, url: Faker::Internet.url, counted: true)
     end
     5.times do
       Link.create(title: Faker::Company.bs, url: Faker::Internet.url)

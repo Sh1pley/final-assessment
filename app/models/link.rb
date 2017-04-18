@@ -4,10 +4,13 @@ class Link < ActiveRecord::Base
   validates_presence_of :title, :url
 
   def self.add_count(link)
-    link.count = +1
+      link.counted = true
+      link.count = +1
   end
 
   def self.hotreads
-    sort(:count).take(10)
+    where({counted: true})
+    .order('count DESC')
+    .take(10)
   end
 end
