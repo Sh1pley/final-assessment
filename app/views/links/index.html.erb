@@ -13,9 +13,10 @@
     <div><button class='unread-filter'>Unread links</button></div>
   </div>
   <div class='link-container'>
-    <% if @hotlinks.length > 0 %>
-      <% @hotlinks.each do |link| %>
-        <%= render partial: "layouts/hotlink", locals: {link: link, hot: hot} %>
+    <% if @hotreads.length > 0 %>
+      <%= render partial: "layouts/hotlink", locals: {link: @hotreads.shift, hot: "top"} %>
+      <% @hotreads.each do |link| %>
+        <%= render partial: "layouts/hotlink", locals: {link: link, hot: "hot"} %>
       <% end %>
     <% end %>  
     <% @links.each do |link| %>
