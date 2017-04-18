@@ -8816,6 +8816,17 @@ button.close {
   background: grey;
 }
 
+/* line 25, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
+.hot {
+  background: red;
+}
+
+/* line 29, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
+.top {
+  width: 85%;
+  background: firebrick;
+}
+
 /* line 1, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/search.scss */
 .input[type=text] {
   width: 130px;
