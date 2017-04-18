@@ -8824,7 +8824,8 @@ button.close {
 
 /* line 30, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
 .true {
-  background: grey;
+  opacity: .55;
+  border: .2em solid grey;
 }
 
 /* line 1, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/search.scss */
