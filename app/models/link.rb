@@ -12,12 +12,14 @@ class Link < ActiveRecord::Base
     end  
   end
 
-  def self.get_toplink(link)
+  def self.get_toplink(links)
     toplink = []
-    if hotreads[0].url == link.url
-      toplink << hotreads[0] 
+    links.each do |link|
+      if hotreads[0].url == link.url
+        toplink << hotreads[0] 
+      end
     end
-    return toplink
+    return toplink.uniq
   end
 
   def self.user_hotlinks(id)
@@ -31,7 +33,7 @@ class Link < ActiveRecord::Base
       end
     end
     links = userlinks - hotlinks.uniq
-    toplink = get_toplink(hotlinks[0])
+    toplink = get_toplink(userlinks)
     hot   = hotlinks.uniq - toplink
     
     response = {top: toplink, hot: hot, links: links}
