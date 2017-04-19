@@ -1,6 +1,22 @@
+.container {
+  width: 100%;
+}
 .link-container {
   display: flex;
   flex-wrap: wrap;
+  // width: 100%;
+}
+
+.hot-container {
+  width: 100%;
+}
+
+.top-container {
+  width: 100%;
+}
+
+.top.col.link {
+  width: 89%;
 }
 
 .col {
@@ -11,20 +27,11 @@
   display: inline-block;
   background: lightyellow;
   border: .1em solid grey;
-  padding: .3em;
-  width: 21%;
+  padding: .2em;
+  width: 29%;
   margin: 10px 0 0 10px;
   border-radius: 15px;
   text-align: center;
-}
-
-.hot {
-  background: red;
-}
-
-.top {
-  width: 85%;
-  background: firebrick;
 }
 
 .true {
@@ -38,4 +45,5 @@
   left: 5px;
   margin: 10px 0 0 10px;
 }
+
 
