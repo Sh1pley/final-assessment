@@ -8797,29 +8797,35 @@ button.close {
 .link-container {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 /* line 10, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
-.hot-container {
+.links-container {
   width: 100%;
 }
 
 /* line 14, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
-.top-container {
+.hot-container {
   width: 100%;
 }
 
 /* line 18, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
+.top-container {
+  width: 100%;
+}
+
+/* line 22, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
 .top.col.link {
   width: 89%;
 }
 
-/* line 22, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
+/* line 26, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
 .col {
   flex-grow: 1;
 }
 
-/* line 26, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
+/* line 30, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
 .link {
   display: inline-block;
   background: lightyellow;
@@ -8831,13 +8837,13 @@ button.close {
   text-align: center;
 }
 
-/* line 37, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
+/* line 41, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
 .true {
   opacity: .55;
   border: .2em solid grey;
 }
 
-/* line 42, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
+/* line 46, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
 .alert {
   position: fixed;
   top: 5px;
