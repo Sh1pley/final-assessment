@@ -14,19 +14,19 @@
   
   <div class='link-container'>
     <div class='top-container'>
-      <% if @links[:top] %>
+      <% if @links[:top][0] %>
         <%= render partial: "layouts/toplink", locals: {link: @links[:top][0]} %>
       <% end %>
     </div>
     <div class='hot-container'>
-      <% if @links[:hot] %>
+      <% if @links[:hot][0] %>
         <% @links[:hot].each do |link| %>
           <%= render partial: "layouts/hotlink", locals: {link: link} %>
         <% end %>
       <% end %>
     </div>
     <div class='links-container'>
-      <% if @links[:links] %>
+      <% if @links[:links][0] %>
         <% @links[:links].each do |link| %>
           <%= render partial: "layouts/link", locals: {link: link} %>
         <% end %>
