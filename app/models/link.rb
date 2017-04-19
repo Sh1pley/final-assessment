@@ -12,11 +12,28 @@ class Link < ActiveRecord::Base
     end  
   end
 
-  def self.user_hotlinks(id)
-    where({counted: true, user_id: id})
-    .order('count DESC')
-    .take(10)
+  def self.get_toplink(id)
+    toplink = []
+    if hotreads[0].user_id == id
+      toplink << hotreads[0] 
+    end
+    return toplink
+  end
 
+  def self.user_hotlinks(id)
+    userlinks = where({user_id: id})
+    toplink = get_toplink(id)
+    hotlinks = [] 
+    hotreads.map do |link| 
+      if link.user_id == id
+        hotlinks << link
+      end
+    end
+    links = userlinks - hotlinks
+    hot   = hotlinks - toplink
+    
+    response = {top: toplink, hot: hot, links: links}
+    return response
   end
 
   def self.hotreads

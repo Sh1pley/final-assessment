@@ -5,20 +5,33 @@
   <%= render partial: 'layouts/link_form' %>
 <% end %>
 
-<% if @links.count >= 1 %>
   <h2>Links!</h2>
   <div class='search-box'>
     <input type="text" name="search" placeholder="Search..">
     <div><button class='read-filter'>Read links</button></div>
     <div><button class='unread-filter'>Unread links</button></div>
   </div>
+  
   <div class='link-container'>
-    <% if @links %>
-      <% @links.each do |link| %>
-        <%= render partial: "layouts/link", locals: {link: link} %>
+    <div class='top-container'>
+      <% if @links[:top] %>
+        <%= render partial: "layouts/toplink", locals: {link: @links[:top][0]} %>
       <% end %>
-    <% end %>
+    </div>
+    <div class='hot-container'>
+      <% if @links[:hot] %>
+        <% @links[:hot].each do |link| %>
+          <%= render partial: "layouts/hotlink", locals: {link: link} %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class='links-container'>
+      <% if @links[:links] %>
+        <% @links[:links].each do |link| %>
+          <%= render partial: "layouts/link", locals: {link: link} %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-<% end %>
 <br>
 <%= render partial: 'layouts/logout' %>
