@@ -23,7 +23,7 @@ addLink = () => {
     data: linkData
   }).done( (res) => {
     $('.alert').remove();
-    $('.link-container').prepend(res);
+    $('.links-container').prepend(res);
     $('#title').val('');
     $('#url').val('');
   })

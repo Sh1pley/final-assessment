@@ -3,9 +3,7 @@ class LinksController < ApplicationController
 
   def index
     @link = Link.new
-    @hotlinks = Link.user_hotlinks(current_user.id)
-    @links = current_user.links
-    # byebug
+    @links = Link.user_hotlinks(current_user.id)
   end
 
   def create
