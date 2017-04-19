@@ -24,7 +24,7 @@ showRows = ($search, $rows) => {
 }
 
 unreadFilter = () => {
-  $('.unread-filter').click( () => {
+  $('.read-filter').click( () => {
     let $read = $('.true')
     let $rows = $('.link')
     $rows.hide()
@@ -33,7 +33,7 @@ unreadFilter = () => {
 }
 
 readFilter = () => {
-  $('.read-filter').click( () => {
+  $('.unread-filter').click( () => {
     let $unread = $('.false')
     let $rows = $('.link')
     $rows.hide();    
