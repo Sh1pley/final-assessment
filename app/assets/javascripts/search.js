@@ -26,13 +26,17 @@ showRows = ($search, $rows) => {
 unreadFilter = () => {
   $('.unread-filter').click( () => {
     let $read = $('.true')
-    $read.toggle() // could use .hide() for one way hiding
+    let $rows = $('.link')
+    $rows.hide()
+    $read.show() // could use .hide() for one way hiding
   })
 }
 
 readFilter = () => {
   $('.read-filter').click( () => {
     let $unread = $('.false')
-    $unread.toggle() // same as above
+    let $rows = $('.link')
+    $rows.hide();    
+    $unread.show() // same as above
   })
 }
