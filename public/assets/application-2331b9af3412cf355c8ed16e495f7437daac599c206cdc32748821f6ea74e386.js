@@ -11587,17 +11587,15 @@ addLink = () => {
     data: linkData
   }).done( (res) => {
     $('.alert').remove();
-    $('.link-container').prepend(res);
+    $('.links-container').prepend(res);
     $('#title').val('');
     $('#url').val('');
   })
 }
 ;
-"use strict";
-
-$(document).ready(function () {
-  $("body").on("click", ".mark-as-read", markAsRead);
-});
+$( document ).ready(function(){
+  $("body").on("click", ".mark-as-read", markAsRead)
+})
 
 function markAsRead(e) {
   e.preventDefault();
@@ -11608,18 +11606,21 @@ function markAsRead(e) {
   $.ajax({
     type: "PATCH",
     url: "/api/v1/links/" + linkId,
-    data: { read: true }
-  }).then(updateLinkStatus).fail(displayFailure);
+    data: { read: true },
+  }).then(updateLinkStatus)
+    .fail(displayFailure);
 }
 
 function updateLinkStatus(link) {
-  $(".link[data-link-id=" + link.id + "]").find(".read-status").text('Read: ' + link.read);
-  $(".link[data-link-id=" + link.id + "]").toggleClass('false true');
+  $(`.link[data-link-id=${link.id}]`).find(".read-status").text('Read: ' + link.read);
+  $(`.link[data-link-id=${link.id}]`).find(".mark-as-read").text('Mark as Unread');
+  $(`.link[data-link-id=${link.id}]`).toggleClass('false true');
 }
 
-function displayFailure(failureData) {
+function displayFailure(failureData){
   console.log("FAILED attempt to update Link: " + failureData.responseText);
-};
+}
+;
 $( document ).ready(function(){
   $("body").on("click", ".mark-as-unread", markAsUnread)
 })
@@ -11640,6 +11641,7 @@ function markAsUnread(e) {
 
 function updateLinkStatus(link) {
   $(`.link[data-link-id=${link.id}]`).find(".read-status").text('Read: ' + link.read);
+  $(`.link[data-link-id=${link.id}]`).find(".mark-as-unread").text('Mark as Read');
   $(`.link[data-link-id=${link.id}]`).toggleClass('false true');
 }
 
@@ -11675,14 +11677,18 @@ showRows = ($search, $rows) => {
 unreadFilter = () => {
   $('.unread-filter').click( () => {
     let $read = $('.true')
-    $read.toggle() // could use .hide() for one way hiding
+    let $rows = $('.link')
+    $rows.hide()
+    $read.show() // could use .hide() for one way hiding
   })
 }
 
 readFilter = () => {
   $('.read-filter').click( () => {
     let $unread = $('.false')
-    $unread.toggle() // same as above
+    let $rows = $('.link')
+    $rows.hide();    
+    $unread.show() // same as above
   })
 }
 ;

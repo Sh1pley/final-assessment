@@ -8789,46 +8789,55 @@ button.close {
   }
 }
 /* line 1, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
+.container {
+  width: 100%;
+}
+
+/* line 4, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
 .link-container {
   display: flex;
   flex-wrap: wrap;
 }
 
-/* line 6, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
+/* line 10, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
+.hot-container {
+  width: 100%;
+}
+
+/* line 14, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
+.top-container {
+  width: 100%;
+}
+
+/* line 18, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
+.top.col.link {
+  width: 89%;
+}
+
+/* line 22, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
 .col {
   flex-grow: 1;
 }
 
-/* line 10, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
+/* line 26, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
 .link {
   display: inline-block;
   background: lightyellow;
   border: .1em solid grey;
-  padding: .3em;
-  width: 21%;
+  padding: .2em;
+  width: 29%;
   margin: 10px 0 0 10px;
   border-radius: 15px;
   text-align: center;
 }
 
-/* line 21, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
-.hot {
-  background: red;
-}
-
-/* line 25, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
-.top {
-  width: 85%;
-  background: firebrick;
-}
-
-/* line 30, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
+/* line 37, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
 .true {
   opacity: .55;
   border: .2em solid grey;
 }
 
-/* line 35, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
+/* line 42, /Users/jshipley/turing/mod4/final-assessment/app/assets/stylesheets/link.scss */
 .alert {
   position: fixed;
   top: 5px;
